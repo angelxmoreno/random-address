@@ -10,6 +10,7 @@ return [
      * true: Errors and warnings shown.
      */
     'debug' => filter_var(env('DEBUG', true), FILTER_VALIDATE_BOOLEAN),
+    'env' => env('ENV', 'dev'),
     'APP_NAME' => env('APP_NAME', 'APP_NAME'),
     'ALT_NAME' => env('ALT_NAME', 'ALT_NAME'),
     /**
@@ -372,5 +373,8 @@ return [
     ],
     'StatsD' => [
         'url' => env('STATSD_URL')
-    ]
+    ],
+    'Sentry' => [
+        'dsn' => env('SENTRY_DSN')
+    ],
 ];
