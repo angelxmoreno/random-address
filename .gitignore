@@ -1,6 +1,52 @@
-composer.phar
-/vendor/
+# Docker specific files #
+##########################
+docker/data/es/*
+!docker/data/es/empty
+docker/data/mysql/*
+!docker/data/mysql/empty
+docker/data/mysql-test/*
+!docker/data/mysql-test/empty
+docker/data/redis/*
+!docker/data/redis/empty
 
-# Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
-# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
-# composer.lock
+# CakePHP specific files #
+##########################
+config/.env
+.env
+logs/*
+tmp/*
+vendor/*
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Tool specific files #
+#######################
+# vim
+*~
+*.swp
+*.swo
+# sublime text & textmate
+*.sublime-*
+*.stTheme.cache
+*.tmlanguage.cache
+*.tmPreferences.cache
+# Eclipse
+.settings/*
+# JetBrains, aka PHPStorm, IntelliJ IDEA
+.idea/*
+# NetBeans
+nbproject/*
+# Visual Studio Code
+.vscode
+# Sass preprocessor
+.sass-cache/
+node_modules
