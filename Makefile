@@ -17,3 +17,6 @@ restart: ## starts docker compose
 
 stop: ## stops all containers
 	docker-compose stop
+
+push: ## pushes to heroku
+	git push heroku master
