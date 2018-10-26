@@ -2,7 +2,10 @@ version: '2'
 services:
   fpm:
     container_name: random-address-fpm
-    image: angelxmoreno/php7-fpm-alpine-dev
+    image: angelxmoreno/php7-fpm-alpine-dev-pgsql
+    build:
+      context: ./docker
+      dockerfile: DockerfileFpm
     volumes:
     - '.:/var/www/html'
     - './docker/php.ini:/usr/local/etc/php/php.ini:ro'
@@ -49,6 +52,7 @@ services:
     - MYSQL_DATABASE=random-address
     volumes:
     - './docker/data/mysql/:/var/lib/mysql'
+    - './data/:/var/csvs'
     ports:
     - '8722:3306'
   mysql-test:

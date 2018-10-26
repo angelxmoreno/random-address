@@ -1,0 +1,10 @@
+# Use Alpine Linux
+FROM  angelxmoreno/php7-fpm-alpine-dev
+
+MAINTAINER Angel S. Moreno <angelxmoreno@gmail.com>
+
+RUN docker-php-source extract \
+ && apk --no-cache add postgresql-dev \
+ && docker-php-ext-install pdo pdo_pgsql \
+ && docker-php-source delete \
+ && rm -rf /var/cache/apk/*
