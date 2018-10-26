@@ -1,5 +1,5 @@
 {
-    "name": "crf-api-statsd",
+    "name": "random-address-statsd",
     "version": "1.0.0",
     "description": "A hosted StatsD application for Heroku deployment",
     "main": "index.js",
@@ -10,12 +10,7 @@
         "start": "statsd ./docker/statsd.config.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+ssh://git@bitbucket.org/fivetalentsdevelopment/crf-api.git"
-    },
     "author": "Angel S. Moreno <angelxmoreno@gmail.com>",
-    "homepage": "https://bitbucket.org/fivetalentsdevelopment/crf-api#readme",
     "dependencies": {
         "dotenv": "^6.1.0",
         "statsd": "https://github.com/etsy/statsd.git"
