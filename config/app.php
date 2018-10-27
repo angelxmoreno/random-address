@@ -368,6 +368,9 @@ return [
      *
      * To use database sessions, load the SQL file located at config/schema/sessions.sql
      */
+    'openaddress' => [
+        'data_dir' => env('OPENADDRESS_DATA_DIR')
+    ],
     'Session' => [
         'defaults' => 'php',
     ],

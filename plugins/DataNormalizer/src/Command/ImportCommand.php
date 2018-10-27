@@ -32,8 +32,8 @@ class ImportCommand extends Command
     protected const REGEX_STATE = 'statewide\.csv';
     protected const REGEX_CSV = '.*\.csv';
     protected const LIMIT = 50;
-    protected const ROOT_PATH = Plugin::DATA_DIR . 'us';
-    protected const REGEX_PATH = Plugin::DATA_DIR . '(us/[^\.]*)\.csv';
+    protected const ROOT_PATH = Plugin::DATA_DIR . '/us';
+    protected const REGEX_PATH = Plugin::DATA_DIR . '/(us/[^\.]*)\.csv';
 
     public function initialize()
     {
