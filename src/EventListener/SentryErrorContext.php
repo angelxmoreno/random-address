@@ -23,7 +23,7 @@ class SentryErrorContext implements EventListenerInterface
     public function setContext(Event $event)
     {
         /** @var Request $request */
-        $request = $event->getSubject()->getRequest();
+        $request = $event->getSubject()->getRequest() ?: new Request();
         $request->trustProxy = true;
 
         /** @var \Raven_Client $raven */

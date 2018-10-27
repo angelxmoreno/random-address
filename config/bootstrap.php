@@ -197,3 +197,5 @@ Type::build('timestamp')
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
 
 \Cake\Event\EventManager::instance()->on(new \App\EventListener\SentryErrorContext());
+
+Plugin::load('DataNormalizer', ['bootstrap' => false, 'routes' => true]);

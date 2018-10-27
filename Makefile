@@ -20,3 +20,6 @@ stop: ## stops all containers
 
 push: ## pushes to heroku
 	git push heroku master
+
+import: ## runs importer
+	docker exec $(CONTAINER_PREFIX)-fpm ./bin/cake import
