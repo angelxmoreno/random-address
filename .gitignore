@@ -51,3 +51,4 @@ nbproject/*
 .sass-cache/
 node_modules
 data
+stage.env

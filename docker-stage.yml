@@ -1,0 +1,44 @@
+version: '2'
+services:
+  fpm:
+    image: angelxmoreno/php7-fpm-alpine-dev-pgsql
+    build:
+      context: ./docker
+      dockerfile: DockerfileFpm
+    links:
+    - statsd
+    volumes:
+    - '.:/var/www/html'
+    - './docker/php.ini:/usr/local/etc/php/php.ini:ro'
+  web:
+    ports:
+    - '80:80'
+    volumes:
+    - './docker/site.conf:/etc/nginx/conf.d/_site.conf:ro'
+  redis:
+    volumes:
+    - './docker/data/redis/:/data'
+  es:
+    volumes:
+    - './docker/data/es/:/usr/share/elasticsearch/data'
+  mysql:
+    environment:
+    - MYSQL_ROOT_PASSWORD=random-address
+    - MYSQL_USER=random-address
+    - MYSQL_PASSWORD=random-address
+    - MYSQL_DATABASE=random-address
+    volumes:
+    - './docker/data/mysql/:/var/lib/mysql'
+  statsd:
+    container_name: random-address-statsd
+    image: statsd:random-address
+    build:
+      context: ./docker
+      dockerfile: DockerfileStatsD
+    environment:
+    - MYSQL_ROOT_PASSWORD=random-address-test
+    - MYSQL_USER=random-address-test
+    - MYSQL_PASSWORD=random-address-test
+    - MYSQL_DATABASE=random-address-test
+    volumes:
+    - '.:/var/www/html'

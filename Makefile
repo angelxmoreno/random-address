@@ -9,8 +9,11 @@ help: ## Help menu
 ssh: ## connect to fpm container
 	docker exec -it $(CONTAINER_PREFIX)-fpm ash
 
-start: ## starts docker compose
-	docker-compose up -d
+start-local: ## starts docker compose
+	docker-compose -f docker-compose.yml -f docker-local.yml up -d
+
+start-stage: ## starts docker compose
+	docker-compose -f docker-compose.yml -f docker-stage.yml up -d
 
 restart: ## starts docker compose
 	docker-compose restart
